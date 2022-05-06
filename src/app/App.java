@@ -20,9 +20,9 @@ public class App {
         System.out.println("O limite do mapa X/Y");
         System.out.println("(Separados por espaços)");
         Robot rbt = new Robot(scan.nextInt(), scan.nextInt(), scan.nextInt(), 
-                              scan.nextInt(), "N");*/
+                              scan.nextInt(), scan.next());*/
         
-        Robot rbt = new Robot("N");
+        Robot rbt = new Robot("Norte");
         System.out.println("Digite o limite do campo(X): ");
         rbt.setMapx(scan.nextInt());
         System.out.println("");
@@ -39,7 +39,7 @@ public class App {
         
         while(control != 4){
             System.out.println("");
-            System.out.println("-MENU-");
+            System.out.println("-----MENU-----");
             System.out.println("1 - Girar Robo");
             System.out.println("2 - Andar");
             System.out.println("3 - Posicao robo");
@@ -81,6 +81,7 @@ public class App {
                     System.out.println("");
                     rbt.mostrarPosicao();
                     break;
+                    
                 case 4:
                     System.out.println("Encerrando...");
                     break;

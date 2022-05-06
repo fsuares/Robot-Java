@@ -52,19 +52,20 @@ public class Robot {
         this.direcao = direcao;
     }
     
-   /* public Robot(int x, int y, int mapx, int mapy, String direcao){
+    /*public Robot(int x, int y, int mapx, int mapy, String direcao){
         this.x = x;
         this.y = y;
         this.mapx = mapx;
         this.mapy = mapy;
         this.direcao = direcao;
     }*/
+    
     public Robot(String direcao){
         this.direcao = direcao;
     }
     
     public void mostrarPosicao(){
-        System.out.println("X: " + this.x + " Y: " + this.y);
+        System.out.println("X: " + this.getX() + "\nY: " + this.getY());
     }
     
     public void norte(){
@@ -85,15 +86,15 @@ public class Robot {
     
     public void girarPara(String direcao){
         switch(direcao){
-            case "N" -> this.direcao="N";
-            case "S" -> this.direcao="S";
-            case "L" -> this.direcao="L";
-            case "O" -> this.direcao="O";
+            case "N" -> this.setDirecao("Norte");
+            case "S" -> this.setDirecao("Sul");
+            case "L" -> this.setDirecao("Leste");
+            case "O" -> this.setDirecao("Oeste");
         }
     }
     
     public void andar(){
-        if(this.direcao == "N"){
+        if(this.direcao == "Norte"){
             if (this.getY() < this.getMapy()){
                 norte();
             }
@@ -103,7 +104,7 @@ public class Robot {
             }
         }
         
-        if(this.direcao == "S"){
+        if(this.direcao == "Sul"){
             if (this.getY() > 1){
                 sul();
             }
@@ -113,7 +114,7 @@ public class Robot {
             }
         }
         
-        if(this.direcao == "L"){
+        if(this.direcao == "Leste"){
             if (this.getX() < this.getMapx()){
                 leste();
             }
@@ -123,7 +124,7 @@ public class Robot {
             }
         }
         
-        if(this.direcao == "O"){
+        if(this.direcao == "Oeste"){
             if (this.getX() > 1){
                 norte();
             }
